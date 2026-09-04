@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --foreground: #111318;
+  --muted: #687080;
+  --border: #e2e5ea;
+  --primary: #165dff;
+  --primary-soft: #eaf0ff;
+  --violet: #7457e8;
+  --success: #16865b;
+  --warning: #b66a09;
+  --danger: #c73a4a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0c0e12;
+    --surface: #13161c;
+    --surface-2: #1a1e26;
+    --foreground: #f3f5f8;
+    --muted: #9aa2b1;
+    --border: #262b35;
+    --primary: #4c7dff;
+    --primary-soft: #182647;
+  }
+}
+
+* { box-sizing: border-box; border-color: var(--border); }
+html { background: var(--background); }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: #a9afba66; border-radius: 8px; }
+
+@layer components {
+  .card { border: 1px solid var(--border); background: var(--surface); border-radius: 12px; box-shadow: 0 1px 2px #1018280a; }
+  .btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:40px; padding:.55rem .9rem; border:0; border-radius:8px; background:var(--primary); color:white; font-weight:650; cursor:pointer; transition:.16s ease; }
+  .btn-primary:hover { filter:brightness(.94); }
+  .btn-secondary { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; min-height:40px; padding:.55rem .9rem; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--foreground); font-weight:600; cursor:pointer; }
+  .label { color:var(--muted); font-size:.76rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; }
+  .input { width:100%; min-height:42px; padding:.65rem .75rem; border:1px solid var(--border); border-radius:8px; background:var(--surface); color:var(--foreground); }
+  .badge { display:inline-flex; align-items:center; gap:.35rem; padding:.24rem .48rem; border-radius:6px; background:var(--surface-2); color:var(--muted); font-size:.75rem; font-weight:650; }
+}

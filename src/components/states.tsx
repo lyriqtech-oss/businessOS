@@ -1,0 +1,4 @@
+import { AlertTriangle, Inbox, LoaderCircle } from "lucide-react";
+export function EmptyState({ title="Nada por aqui", description="Os novos registros aparecerão aqui." }) { return <div className="card grid min-h-56 place-items-center p-8 text-center"><div><Inbox className="mx-auto mb-3 text-[var(--muted)]"/><h3 className="font-semibold">{title}</h3><p className="mt-1 text-sm text-[var(--muted)]">{description}</p></div></div>; }
+export function ErrorState() { return <div className="card grid min-h-56 place-items-center p-8 text-center"><div><AlertTriangle className="mx-auto mb-3 text-[var(--danger)]"/><h3 className="font-semibold">Não foi possível carregar</h3><p className="mt-1 text-sm text-[var(--muted)]">Tente novamente. Se persistir, consulte o status das integrações.</p></div></div>; }
+export function LoadingState() { return <div className="card grid min-h-56 place-items-center"><LoaderCircle className="animate-spin text-[var(--primary)]"/></div>; }
